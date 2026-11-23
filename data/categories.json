@@ -1,0 +1,220 @@
+[
+ {
+  "slug": "biskuvi",
+  "name": "Bisküvi",
+  "sourceId": 1,
+  "subcategories": [
+   {
+    "slug": "special",
+    "name": "Special",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/special/1/6",
+    "productCount": 31
+   },
+   {
+    "slug": "bebe-biskuvisi",
+    "name": "Bebe Bisküvisi",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/bebe-biskuvisi/1/26",
+    "productCount": 1
+   },
+   {
+    "slug": "petit-beurre",
+    "name": "Petit Beurre",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/petit-beurre/1/25",
+    "productCount": 13
+   },
+   {
+    "slug": "sandvic-biskuvi",
+    "name": "Sandviç Bisküvi",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/sandvic-biskuvi/1/4",
+    "productCount": 20
+   },
+   {
+    "slug": "kremali",
+    "name": "Kremalı",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/kremali/1/5",
+    "productCount": 46
+   },
+   {
+    "slug": "marshmallow-biskuvi",
+    "name": "Marshmallow Bisküvi",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/marshmallow-biskuvi/1/16",
+    "productCount": 30
+   },
+   {
+    "slug": "finger-biskuvi",
+    "name": "Finger Bisküvi",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/finger-biskuvi/1/27",
+    "productCount": 5
+   },
+   {
+    "slug": "dokme",
+    "name": "Dökme",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/dokme/1/21",
+    "productCount": 3
+   }
+  ],
+  "sourceUrl": "https://www.anibiskuvi.com.tr/kategoriler/biskuvi/1",
+  "productCount": 149
+ },
+ {
+  "slug": "cikolata",
+  "name": "Çikolata",
+  "sourceId": 2,
+  "subcategories": [
+   {
+    "slug": "kaplamali-cubuk",
+    "name": "Kaplamalı Çubuk",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/kaplamali-cubuk/2/29",
+    "productCount": 2
+   },
+   {
+    "slug": "bar",
+    "name": "Bar",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/bar/2/3",
+    "productCount": 50
+   },
+   {
+    "slug": "kakaolu-findik-kremasi",
+    "name": "Kakaolu Fındık Kreması",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/kakaolu-findik-kremasi/2/20",
+    "productCount": 1
+   },
+   {
+    "slug": "surpriz-yumurta",
+    "name": "Sürpriz Yumurta",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/surpriz-yumurta/2/28",
+    "productCount": 1
+   }
+  ],
+  "sourceUrl": "https://www.anibiskuvi.com.tr/kategoriler/cikolata/2",
+  "productCount": 54
+ },
+ {
+  "slug": "kek",
+  "name": "Kek",
+  "sourceId": 3,
+  "subcategories": [
+   {
+    "slug": "kek",
+    "name": "Kek",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/kek/3/8",
+    "productCount": 94
+   }
+  ],
+  "sourceUrl": "https://www.anibiskuvi.com.tr/kategoriler/kek/3",
+  "productCount": 94
+ },
+ {
+  "slug": "gofret",
+  "name": "Gofret",
+  "sourceId": 4,
+  "subcategories": [
+   {
+    "slug": "kaplamasiz-gofret",
+    "name": "Kaplamasız Gofret",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/kaplamasiz-gofret/4/1",
+    "productCount": 40
+   },
+   {
+    "slug": "dokme",
+    "name": "Dökme",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/dokme/4/22",
+    "productCount": 11
+   },
+   {
+    "slug": "kaplamali-gofret",
+    "name": "Kaplamalı Gofret",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/kaplamali-gofret/4/2",
+    "productCount": 17
+   }
+  ],
+  "sourceUrl": "https://www.anibiskuvi.com.tr/kategoriler/gofret/4",
+  "productCount": 68
+ },
+ {
+  "slug": "kraker",
+  "name": "Kraker",
+  "sourceId": 5,
+  "subcategories": [
+   {
+    "slug": "badem-kraker",
+    "name": "Badem Kraker",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/badem-kraker/5/15",
+    "productCount": 1
+   },
+   {
+    "slug": "cubuk-kraker",
+    "name": "Çubuk Kraker",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/cubuk-kraker/5/10",
+    "productCount": 9
+   },
+   {
+    "slug": "balik-kraker",
+    "name": "Balık Kraker",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/balik-kraker/5/13",
+    "productCount": 2
+   },
+   {
+    "slug": "tuzlu-kraker",
+    "name": "Tuzlu Kraker",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/tuzlu-kraker/5/9",
+    "productCount": 2
+   },
+   {
+    "slug": "peynirli-kraker",
+    "name": "Peynirli Kraker",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/peynirli-kraker/5/23",
+    "productCount": 2
+   },
+   {
+    "slug": "fiyonk-kraker",
+    "name": "Fiyonk Kraker",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/fiyonk-kraker/5/12",
+    "productCount": 4
+   },
+   {
+    "slug": "pizza-kraker",
+    "name": "Pizza Kraker",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/pizza-kraker/5/14",
+    "productCount": 1
+   },
+   {
+    "slug": "susamli-kraker",
+    "name": "Susamlı Kraker",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/susamli-kraker/5/11",
+    "productCount": 2
+   }
+  ],
+  "sourceUrl": "https://www.anibiskuvi.com.tr/kategoriler/kraker/5",
+  "productCount": 26
+ },
+ {
+  "slug": "sekerleme",
+  "name": "Şekerleme",
+  "sourceId": 6,
+  "subcategories": [
+   {
+    "slug": "dolgulu",
+    "name": "Dolgulu",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/dolgulu/6/18",
+    "productCount": 16
+   },
+   {
+    "slug": "yumusak-seker",
+    "name": "Yumuşak Şeker",
+    "sourceUrl": "https://www.anibiskuvi.com.tr/altKategoriler/yumusak-seker/6/17",
+    "productCount": 8
+   }
+  ],
+  "sourceUrl": "https://www.anibiskuvi.com.tr/kategoriler/sekerleme/6",
+  "productCount": 26
+ },
+ {
+  "slug": "makarna",
+  "name": "Makarna",
+  "sourceId": null,
+  "subcategories": [],
+  "sourceUrl": "https://www.anibiskuvi.com.tr/assets/dosyalar/Katalog.pdf#page=5",
+  "productCount": 5
+ }
+]

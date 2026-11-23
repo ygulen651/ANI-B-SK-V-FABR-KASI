@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+.playwright-mcp
+
+# Yerel araç dosyaları
+.claude-flow
+.swarm
+agentdb.rvf
+agentdb.rvf.lock
+ruvector.db
+.env*

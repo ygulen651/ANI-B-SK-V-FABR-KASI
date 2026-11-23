@@ -1,0 +1,302 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Tasarım belirteçleri                                                */
+/* Ağırlıkla KIRMIZI + BEYAZ. Logo kırmızısı #ED1C24 (logo.svg).       */
+/* "cream" = beyaz/pembe-beyaz yüzeyler, "choco" = koyu bordo metin.    */
+/* ------------------------------------------------------------------ */
+:root {
+  --ani-red: #ed1c24;
+  --ani-red-500: #ff2a33;
+  --ani-red-600: #d4111a; /* metin taşıyan kırmızı yüzeyler (beyaz metinle ≥4.5:1) */
+  --ani-red-700: #c4121a; /* küçük metinlerde kontrast için */
+  --ani-red-900: #8a0910;
+
+  --cream-50: #ffffff;
+  --cream-100: #ffffff;
+  --cream-200: #fff0f0;
+  --cream-300: #ffd3d5;
+
+  --choco-500: #b0343b;
+  --choco-700: #8e1a21;
+  --choco-800: #6a0f15;
+  --choco-900: #3a060a;
+
+  --c-biskuvi: #ffb21a;
+  --c-biskuvi-soft: #fff0cc;
+  --c-cikolata: #6b2a12;
+  --c-cikolata-soft: #f6e3d9;
+  --c-kek: #ff5c8d;
+  --c-kek-soft: #ffe3ec;
+  --c-gofret: #ffd21f;
+  --c-gofret-soft: #fff6c7;
+  --c-kraker: #ff7a1a;
+  --c-kraker-soft: #ffe6d3;
+  --c-sekerleme: #8b3dff;
+  --c-sekerleme-soft: #efe4ff;
+  --c-makarna: #1d5bff;
+  --c-makarna-soft: #dce7ff;
+
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@theme inline {
+  --color-red: var(--ani-red);
+  --color-red-500: var(--ani-red-500);
+  --color-red-600: var(--ani-red-600);
+  --color-red-700: var(--ani-red-700);
+  --color-red-900: var(--ani-red-900);
+  --color-cream-50: var(--cream-50);
+  --color-cream-100: var(--cream-100);
+  --color-cream-200: var(--cream-200);
+  --color-cream-300: var(--cream-300);
+  --color-choco-500: var(--choco-500);
+  --color-choco-700: var(--choco-700);
+  --color-choco-800: var(--choco-800);
+  --color-choco-900: var(--choco-900);
+  --color-biskuvi: var(--c-biskuvi);
+  --color-cikolata: var(--c-cikolata);
+  --color-kek: var(--c-kek);
+  --color-gofret: var(--c-gofret);
+  --color-kraker: var(--c-kraker);
+  --color-sekerleme: var(--c-sekerleme);
+  --color-makarna: var(--c-makarna);
+
+  --font-display: var(--font-bricolage), "Arial Black", system-ui, sans-serif;
+  --font-sans: var(--font-figtree), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html {
+  overflow-x: clip;
+  background: var(--cream-100);
+  color: var(--choco-900);
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 6rem;
+}
+body {
+  font-family: var(--font-sans);
+  background: var(--cream-100);
+  overflow-x: clip;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+}
+
+::selection { background: var(--ani-red); color: #fff; }
+
+:focus-visible {
+  outline: 3px solid var(--ani-red);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.on-dark :focus-visible, .on-dark:focus-visible { outline-color: var(--cream-50); }
+
+.skip-link {
+  position: absolute; left: 1rem; top: -100px; z-index: 100;
+  background: var(--choco-900); color: var(--cream-50); padding: .75rem 1rem; border-radius: 999px; font-weight: 700;
+}
+.skip-link:focus { top: 1rem; }
+
+/* Beyaz zeminli ambalaj fotoğrafları renkli zeminle kaynaşsın (görsel değiştirilmez) */
+.pack-white { mix-blend-mode: multiply; }
+/* transform yeni yığın bağlamı açar; karışımı dönüştürülen sarmalayıcıya taşı */
+:where(.lift-pack, .float, .intro-pop):has(> img.pack-white) { mix-blend-mode: multiply; }
+
+/* ------------------------------------------------------------------ */
+/* Butonlar                                                            */
+/* ------------------------------------------------------------------ */
+.btn {
+  position: relative; display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+  min-height: 3.25rem; padding: .85rem 1.6rem; border-radius: 999px;
+  font-weight: 800; font-size: 1rem; line-height: 1; letter-spacing: .005em;
+  transition: transform .35s var(--ease-out-back), box-shadow .35s var(--ease-out-quart), background-color .25s, color .25s;
+  will-change: transform;
+}
+.btn:hover { transform: translateY(-3px) scale(1.02); }
+.btn:active { transform: translateY(0) scale(.97); transition-duration: .1s; }
+.btn .btn-icon { transition: transform .35s var(--ease-out-back); }
+.btn:hover .btn-icon { transform: translateX(4px) rotate(-8deg); }
+.btn-primary { background: var(--ani-red-600); color: #fff; box-shadow: 0 8px 0 -2px var(--ani-red-900), 0 14px 28px -10px rgba(237, 28, 36, .55); }
+.btn-primary:hover { box-shadow: 0 11px 0 -2px var(--ani-red-900), 0 20px 34px -12px rgba(237, 28, 36, .6); }
+.btn-dark { background: var(--choco-900); color: #fff; box-shadow: 0 8px 0 -2px #14000a, 0 14px 28px -12px rgba(58, 6, 10, .55); }
+.btn-ghost { background: transparent; color: var(--choco-900); box-shadow: inset 0 0 0 2.5px var(--choco-900); }
+.btn-ghost:hover { background: var(--choco-900); color: var(--cream-50); }
+.btn-cream { background: #fff; color: var(--ani-red-700); box-shadow: 0 8px 0 -2px rgba(90,0,6,.45), 0 16px 30px -14px rgba(0,0,0,.4); }
+.btn-outline-white { background: transparent; color: #fff; box-shadow: inset 0 0 0 2.5px #fff; }
+.btn-outline-white:hover { background: #fff; color: var(--ani-red-700); }
+
+/* Parlama: birincil butonlarda ara sıra ışık geçer */
+.btn-primary, .btn-cream { overflow: hidden; isolation: isolate; }
+.btn-primary::after, .btn-cream::after {
+  content: ""; position: absolute; inset: -20% auto -20% -40%; width: 35%; z-index: -1;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent);
+  transform: translateX(-120%) skewX(-18deg); animation: shine 3.6s ease-in-out infinite;
+}
+.btn-cream::after { background: linear-gradient(100deg, transparent, rgba(237,28,36,.18), transparent); }
+
+/* ------------------------------------------------------------------ */
+/* Giriş ve kaydırma animasyonları — yalnızca transform/opacity        */
+/* ------------------------------------------------------------------ */
+@keyframes rise {
+  from { opacity: 0; transform: translate3d(0, 28px, 0) scale(.98); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes pop {
+  0% { opacity: 0; transform: translate3d(0, 40px, 0) scale(.6) rotate(var(--r, 0deg)); }
+  70% { opacity: 1; transform: translate3d(0, -6px, 0) scale(1.04) rotate(var(--r, 0deg)); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1) rotate(var(--r, 0deg)); }
+}
+@keyframes floaty {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(var(--r, 0deg)); }
+  50% { transform: translate3d(0, var(--float, -14px), 0) rotate(calc(var(--r, 0deg) + var(--tilt, 2deg))); }
+}
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+@keyframes wave-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes shine { 0%, 60% { transform: translateX(-120%) skewX(-18deg); } 100% { transform: translateX(520%) skewX(-18deg); } }
+@keyframes wobble { 0%, 100% { transform: rotate(var(--r, -3deg)) scale(1); } 50% { transform: rotate(calc(var(--r, -3deg) * -0.6)) scale(1.04); } }
+@keyframes wiggle { 0%, 100% { transform: translate3d(0,-14px,0) rotate(var(--hover-r, -4deg)) scale(1.06); } 50% { transform: translate3d(0,-18px,0) rotate(calc(var(--hover-r, -4deg) * -1)) scale(1.08); } }
+@keyframes drift {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
+  10% { opacity: var(--o, .9); }
+  90% { opacity: var(--o, .9); }
+  100% { transform: translate3d(var(--dx, 40px), var(--dy, -260px), 0) rotate(var(--rot, 220deg)); opacity: 0; }
+}
+@keyframes pulse-ring { 0% { transform: scale(.6); opacity: .9; } 100% { transform: scale(2.6); opacity: 0; } }
+@keyframes bounce-in {
+  0% { opacity: 0; transform: translate3d(0, 60%, 0) rotate(8deg) scale(.7); }
+  60% { opacity: 1; transform: translate3d(0, -8%, 0) rotate(-3deg) scale(1.05); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes light-up { from { opacity: 0; transform: scale(.85); } to { opacity: 1; transform: none; } }
+@keyframes marquee-rev { from { transform: translate3d(-50%, 0, 0); } to { transform: translate3d(0, 0, 0); } }
+
+.intro { animation: rise .8s var(--ease-out-quart) both; animation-delay: var(--d, 0ms); }
+.intro-pop { animation: pop .9s var(--ease-out-quart) both; animation-delay: var(--d, 0ms); }
+.float { transform: rotate(var(--r, 0deg)); animation: floaty var(--dur, 6s) ease-in-out infinite; animation-delay: var(--fd, 0s); }
+.spin-slow { animation: spin-slow 40s linear infinite; }
+.wave-drift { animation: wave-drift 18s linear infinite; }
+.marquee { animation: marquee 32s linear infinite; }
+.marquee-rev { animation: marquee-rev 36s linear infinite; }
+.spin-mid { animation: spin-slow 24s linear infinite; }
+.spin-rev { animation: spin-slow 30s linear infinite reverse; }
+.wobble { animation: wobble 2.8s ease-in-out infinite; }
+.bounce-word { display: inline-block; animation: bounce-in .9s var(--ease-out-quart) both; animation-delay: var(--d, 0ms); }
+.drift { position: absolute; animation: drift var(--dur, 9s) linear infinite; animation-delay: var(--fd, 0s); }
+.pulse-ring { animation: pulse-ring 2.2s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+.js .light-up .lit { opacity: 0; }
+.js .light-up.is-in .lit { animation: light-up .5s var(--ease-out-quart) both; animation-delay: var(--d, 0ms); transform-box: fill-box; transform-origin: center; }
+
+/* Kaydırma ilerleme çubuğu ve kaydırmaya bağlı hareketler (destekleyen tarayıcılarda) */
+.scroll-progress { position: fixed; left: 0; top: 0; z-index: 70; height: 4px; width: 100%; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, var(--ani-red), #ff7a1a, var(--ani-red)); pointer-events: none; }
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes grow-x { to { transform: scaleX(1); } }
+    .scroll-progress { animation: grow-x linear both; animation-timeline: scroll(root); }
+    @keyframes par-up { from { transform: translate3d(0, 60px, 0) rotate(var(--pr, -6deg)); } to { transform: translate3d(0, -60px, 0) rotate(calc(var(--pr, -6deg) * -1)); } }
+    .parallax { animation: par-up linear both; animation-timeline: view(); }
+    @keyframes zoom-in-view { from { transform: scale(.88) rotate(-1.5deg); } to { transform: none; } }
+    .zoom-view { animation: zoom-in-view linear both; animation-timeline: view(); animation-range: entry 0% cover 30%; }
+  }
+}
+
+/* İhracat haritası: Karaman'a yakın başlar, uzaklaşır, oklar ülkelere uzanır */
+@keyframes map-zoom-out {
+  from { transform: translate(var(--zx), var(--zy)) scale(var(--zs)); }
+  to { transform: translate(0px, 0px) scale(1); }
+}
+@keyframes draw { from { stroke-dashoffset: 1.1; } to { stroke-dashoffset: 0; } }
+@keyframes label-out { 0% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(-10px); } }
+.export-map .map-zoom { transform-box: view-box; transform-origin: 0 0; }
+.export-map .map-label { display: none; }
+.js .export-map .map-label { display: inline; transform-box: fill-box; }
+.js .export-map .map-zoom { transform: translate(var(--zx), var(--zy)) scale(var(--zs)); }
+.js .export-map.is-in .map-zoom { animation: map-zoom-out 2.6s cubic-bezier(.65, 0, .35, 1) .9s both; }
+.js .export-map.is-in .map-label { animation: label-out .6s ease-in 2s both; }
+.js .export-map .map-arrow { stroke-dasharray: 1 3; stroke-dashoffset: 1.1; }
+.js .export-map.is-in .map-arrow { animation: draw .75s cubic-bezier(.3, .7, .4, 1) both; animation-delay: var(--d, 0ms); }
+
+@keyframes letter-bob { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-12px) rotate(-4deg); } }
+.letter-wave { animation: letter-bob 1.8s ease-in-out infinite; animation-delay: var(--d, 0ms); }
+
+/* Güneş ışınları (açılış) */
+.sunburst {
+  background: repeating-conic-gradient(from 0deg, rgba(255,255,255,.13) 0deg 9deg, transparent 9deg 22.5deg);
+  border-radius: 9999px;
+  mask-image: radial-gradient(circle, #000 25%, transparent 70%);
+}
+
+/* Kaydırınca beliren içerik: yalnızca JS çalışıyorsa gizlenir */
+.js .reveal-pop { opacity: 0; transform: translate3d(0, 40px, 0) scale(.85) rotate(-3deg); transition: opacity .7s var(--ease-out-quart), transform .9s var(--ease-out-back); transition-delay: var(--d, 0ms); }
+.js .reveal-pop.is-in { opacity: 1; transform: none; }
+.js .reveal { opacity: 0; transform: translate3d(0, 36px, 0); transition: opacity .8s var(--ease-out-quart), transform .9s var(--ease-out-quart); transition-delay: var(--d, 0ms); }
+.js .reveal.is-in { opacity: 1; transform: none; }
+
+/* Kart üzerine gelme: ambalaj yükselir ve hafifçe döner */
+.lift-pack { transition: transform .55s var(--ease-out-back); }
+.group:hover .lift-pack, .group:focus-visible .lift-pack { transform: translate3d(0, -14px, 0) rotate(var(--hover-r, -4deg)) scale(1.06); animation: wiggle 1.1s ease-in-out .5s infinite; }
+.card-shine { position: relative; overflow: hidden; }
+.card-shine::before {
+  content: ""; position: absolute; inset: 0 auto 0 -60%; width: 45%; z-index: 5; pointer-events: none;
+  background: linear-gradient(105deg, transparent, rgba(255,255,255,.7), transparent);
+  transform: skewX(-18deg) translateX(-100%); transition: transform .9s var(--ease-out-quart);
+}
+.group:hover .card-shine::before { transform: skewX(-18deg) translateX(420%); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .001ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+  .js .reveal, .js .reveal-pop { opacity: 1; transform: none; }
+  .js .light-up .lit { opacity: 1; }
+  .js .export-map .map-zoom { transform: none; }
+  .js .export-map .map-arrow { stroke-dashoffset: 0; }
+  .js .export-map .map-label { display: none; }
+  .drift { display: none; }
+}
+
+/* Mobilde ağır hareketleri azalt */
+@media (max-width: 767px) {
+  .float { animation-duration: calc(var(--dur, 6s) * 1.4); }
+  .no-mobile-motion { animation: none !important; }
+  .drift.mobile-hide { display: none; }
+}
+
+/* Krem doku: hafif nokta deseni */
+.dots {
+  background-image: radial-gradient(rgba(255, 255, 255, .22) 1.4px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+/* Yatay kaydırmalı vitrin */
+.snap-row { scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+.snap-row::-webkit-scrollbar { display: none; }
+.snap-row > * { scroll-snap-align: start; }
+
+.text-balance { text-wrap: balance; }
+.text-pretty { text-wrap: pretty; }
+
+/* Uzun metin */
+.prose-ani p { margin-bottom: 1.1em; line-height: 1.75; }
+.prose-ani p:last-child { margin-bottom: 0; }
